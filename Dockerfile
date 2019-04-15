@@ -1,4 +1,4 @@
-FROM docker.bluelight.limited:5000/bluelightltd/microkube-install-image
+FROM docker.bluelight.limited:5000/bluelightltd/microkube-app-image
 
 # ENV RUBY_VER=2.5.3
 ENV RUBY_VER=2.6.0
@@ -16,5 +16,5 @@ RUN     . /etc/rvmrc && \
         rake render:config && \
         sed -i 's/3.6/3.3/g' compose/* && \
         echo "Finished setup" 
-
+        
 #CMD ["/bin/bash", "-c", "top"]
