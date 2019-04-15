@@ -14,6 +14,7 @@ RUN     . /etc/rvmrc && \
         export PATH="/usr/local/rvm/rubies/ruby-$RUBY_VER/bin:$PATH" && \
         rvm use --default $RUBY_VER && \
         rake render:config && \
+        sed -i 's/3.6/3.3/g' compose/* && \
         echo "Finished setup" 
 
 #CMD ["/bin/bash", "-c", "top"]
