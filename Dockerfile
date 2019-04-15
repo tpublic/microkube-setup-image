@@ -6,7 +6,6 @@ ENV RUBY_VER=2.6.0
 
 WORKDIR /home/app/microkube/
 
-
 # # # 
 USER app
 RUN     . /etc/rvmrc && \
