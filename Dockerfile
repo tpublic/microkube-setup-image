@@ -1,4 +1,4 @@
-FROM docker.bluelight.limited:5000/bluelightltd/microkube-app-image
+FROM docker.bluelight.limited:5000/bluelightltd/microkube-install-image
 
 # ENV RUBY_VER=2.5.3
 ENV RUBY_VER=2.6.0
