@@ -13,6 +13,7 @@ RUN     . /etc/rvmrc && \
         export PATH="$PATH:/usr/local/rvm/bin/" && \
         export PATH="/usr/local/rvm/rubies/ruby-$RUBY_VER/bin:$PATH" && \
         rvm use --default $RUBY_VER && \
+        rake render:config && \
         echo "Finished setup" 
 
 #CMD ["/bin/bash", "-c", "top"]
