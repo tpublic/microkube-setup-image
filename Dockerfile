@@ -14,6 +14,7 @@ RUN     . /etc/rvmrc && \
         rvm use --default $RUBY_VER && \
         rake render:config && \
         sed -i 's/3.6/3.3/g' compose/* && \
+        sed -i 's/33.3/3306/g' compose/* && \
         echo "Finished setup" 
         
 #CMD ["/bin/bash", "-c", "top"]
