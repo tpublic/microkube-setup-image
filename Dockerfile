@@ -19,4 +19,5 @@ RUN     . /etc/rvmrc && \
         echo "Finished setup" 
         
 
+
 #CMD ["/bin/bash", "-c", "top"]
