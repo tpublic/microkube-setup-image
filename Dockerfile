@@ -18,4 +18,5 @@ RUN     . /etc/rvmrc && \
         sed -i 's/33.3/3306/g' compose/* && \
         echo "Finished setup" 
         
+        
 #CMD ["/bin/bash", "-c", "top"]
