@@ -13,7 +13,7 @@ RUN     . /etc/rvmrc && \
         export PATH="/usr/local/rvm/rubies/ruby-$RUBY_VER/bin:$PATH" && \
         rvm use --default $RUBY_VER && \
         echo "Replacing in multiple files" && \
-        sed -i 's/EVENT_API_RABBITMQ_HOST=rabbitmq/EVENT_API_RABBITMQ_HOST=\"rabbitmq:5672\"/g' templates/config/*.env.erb && \
+        sed -i 's/EVENT_API_RABBITMQ_HOST=rabbitmq/EVENT_API_RABBITMQ_HOST=\[\"rabbitmq:5672\"\]/g' templates/config/*.env.erb && \
         sed -i 's/EVENT_API_RABBITMQ_PORT=5672/EVENT_API_RABBITMQ_PORT=/g' templates/config/*.env.erb && \
         # sed -i 's/rabbitmq/\[\"rabbitmq.microkube\"\]/g' templates/config/*.env.erb && \
         # sed -i 's/rabbitmq/rabbitmq.microkube-peatio/g' templates/config/peatio.env.erb && \
