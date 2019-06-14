@@ -16,6 +16,7 @@ RUN     . /etc/rvmrc && \
         sed -i 's/rabbitmq/\"rabbitmq.microkube:5672\"/g' templates/config/*.env.erb && \
         sed -i 's/EVENT_API_RABBITMQ_PORT=5672/EVENT_API_RABBITMQ_PORT=/g' templates/config/*.env.erb && \
         sed -i 's/RANGER_PORT=80/RANGER_PORT=8081/g' templates/config/peatio.env.erb && \
+        cat templates/config/peatio.env.erb && \
         rake render:config && \
         sed -i 's/3.6/3.3/g' compose/* && \
         sed -i 's/33.3/3306/g' compose/* && \
