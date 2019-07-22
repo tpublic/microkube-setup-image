@@ -1,4 +1,4 @@
-FROM docker.bluelight.limited:5000/bluelightltd/microkube-install-image
+FROM docker.bluelight.limited:5000/bluelightltd/microkube-install-image:latest
 
 # ENV RUBY_VER=2.5.3
 ENV RUBY_VER=2.6.0
@@ -15,7 +15,6 @@ RUN     . /etc/rvmrc && \
         echo "Replacing in multiple files" && \
         sed -i 's/rabbitmq/\"rabbitmq.microkube:5672\"/g' templates/config/*.env.erb && \
         sed -i 's/EVENT_API_RABBITMQ_PORT=5672/EVENT_API_RABBITMQ_PORT=/g' templates/config/*.env.erb && \
-        sed -i 's/RANGER_PORT=80/RANGER_PORT=8081/g' templates/config/peatio.env.erb && \
         cat templates/config/peatio.env.erb && \
         rake render:config && \
         sed -i 's/3.6/3.3/g' compose/* && \
@@ -23,5 +22,6 @@ RUN     . /etc/rvmrc && \
         echo "Finished setup" 
         
 
+        # sed -i 's/RANGER_PORT=80/RANGER_PORT=8080/g' templates/config/peatio.env.erb && \
 
 #CMD ["/bin/bash", "-c", "top"]
